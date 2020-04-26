@@ -130,6 +130,7 @@ var getAndRenderNotes = function() {
   console.log("redering notes")
   return getNotes().then(function(data) {
     renderNoteList(data);
+    console.log(`data${data}`)
   });
 };
 
