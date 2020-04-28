@@ -55,7 +55,6 @@ var handleNoteSave = function() {
     title: $noteTitle.val(),
     text: $noteText.val()
   };
-
   saveNote(newNote).then(function(data) {
     getAndRenderNotes();
     renderActiveNote();
@@ -117,7 +116,7 @@ var renderNoteList = function(notes) {
     var $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
-
+      
     $li.append($span, $delBtn);
     noteListItems.push($li);
   }
@@ -127,7 +126,6 @@ var renderNoteList = function(notes) {
 
 // Gets notes from the db and renders them to the sidebar
 var getAndRenderNotes = function() {
-  console.log("redering notes")
   return getNotes().then(function(data) {
     renderNoteList(data);
     console.log(`data${data}`)

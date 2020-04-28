@@ -1,16 +1,25 @@
-var notesData = require("../db/db.json");
+// var notesData = require("../db/db.json");
+var notesData = require("../db/db")
+// var notesData=[
+//     {
+//         title: "testing this note title",
+//         text: "this is the text that will go in the body of the note that is rendered"
+//     }
+// ];
 
-console.log(notesData);
-module.exports = function(app){
+
+
+
+module.exports = function(app) {
     app.get("/api/notes", function(req, res){
         
         res.json(notesData);
-        console.log(notesData)
+        console.log(notesData);
     });
 
     app.post("/api/notes", function(req, res){
-        var newNote = req.body;
-        notesData.push(req.body);
+        var newNote = "This is not working"
+        notesData.push(newNote);
 
         console.log (`${newNote} was added`)
     })
