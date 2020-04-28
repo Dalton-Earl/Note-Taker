@@ -20,10 +20,13 @@ module.exports = function(app) {
 
     app.post("/api/notes", function(req, res){
         var newNote = req.body
+        
         notesData.push(newNote);
     })
 
     app.delete("/api/notes:id", function(req, res){
-        notesData.delete(id)
+        let id = req.params.id;
+        
+        delete notesData[id];
     })
 }
