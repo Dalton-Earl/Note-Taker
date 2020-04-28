@@ -16,11 +16,14 @@ module.exports = function(app) {
         res.json(notesData);
         console.log(notesData);
     });
+    
 
     app.post("/api/notes", function(req, res){
-        var newNote = "This is not working"
+        var newNote = req.body
         notesData.push(newNote);
+    })
 
-        console.log (`${newNote} was added`)
+    app.delete("/api/notes:id", function(req, res){
+        notesData.delete(id)
     })
 }
